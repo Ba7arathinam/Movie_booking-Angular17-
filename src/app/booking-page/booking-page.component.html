@@ -1,0 +1,28 @@
+<div class="container">
+    <div>
+        <label for="locationSelect">Select Location:</label>
+        <select id="locationSelect" [(ngModel)]="selectedLocation" (change)="onLocationSelect()">
+          <option value="">Select</option>
+          <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+        </select>
+      </div>
+      
+      <div *ngIf="theaters.length > 0">
+        <h2>Theaters:</h2>
+        <ul>
+          <li *ngFor="let theater of theaters">
+            <Button class="btn btn-danger" (click)="onSelectTheater(theater)">{{ theater.name }}</Button>
+          </li>
+        </ul>
+      </div>
+      
+      <div *ngIf="selectedTheater">
+        <h2>Select Show & Timing:</h2>
+        <select [(ngModel)]="selectedTiming">
+          <option value="">Select</option>
+          <option *ngFor="let timing of selectedTheater.showTimings" [value]="timing">{{ timing }}</option>
+        </select>
+      </div>
+      <button (click)="redirectToNewComponent()" class="btn btn-success">Click Here For Booking Details</button>
+</div>
+<H3>Note:You Have to Select All values before click a detiles And Press a Theter Name for Timing</H3>

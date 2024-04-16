@@ -1,0 +1,36 @@
+<div class="main-reg">
+   
+    <form class="row g-3  inner-reg" #userForm="ngForm" (ngSubmit)="submitForm(userForm)" action="RegApplication.html" novalidate>
+        <h3>LOGIN</h3>
+        <div class="col-md-12 form-group">
+          <label for="" class="form-label">Email:</label>
+          <input type="text" placeholder="Enter Your Email Address "
+           class="form-control" id=""  required  name="Email"  [(ngModel)]="emails"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #emailid="ngModel">
+           <span *ngIf="userForm.controls['Email'].touched && userForm.controls['Email'].hasError('required')">
+            Please enter a Email.
+          </span>
+          <span *ngIf="userForm.controls['Email'].touched && userForm.controls['Email'].hasError('pattern')">
+           Enter valid Email ID
+          </span>
+        </div>
+        <div class="col-md-12 form-group">
+          <label for="" class="form-label">Password:</label>
+          <input type="password" placeholder="Enter Your Password" class="form-control" id=""  required name="Password"  [(ngModel)]="pass" minlength="8" #password="ngModel" >
+          <span *ngIf="userForm.controls['Password'].touched && userForm.controls['Password'].hasError('required')">
+            Please enter a password.
+          </span>
+          <span *ngIf="userForm.controls['Password'].touched && userForm.controls['Password'].hasError('minlength')">
+            Password must be at least 8 characters long.
+          </span>
+        </div>
+         <div class="butt">
+            <button class="col-12 btn btn-primary as" type="submit" >LOGIN</button>
+         </div>
+         <div class="forget">
+            <a type="button" href="/forget_password" class="btn btn-link">Forget Password?</a>
+         </div>
+       
+    </form>
+</div>
+
+

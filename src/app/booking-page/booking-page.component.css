@@ -1,0 +1,32 @@
+.container{
+    width: 100vw;
+    padding: 4%;
+   
+}
+label,select{
+    display: block;
+    color: aliceblue;
+}
+label,h2,h3{
+    font-size: xx-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    color: brown;
+}
+
+select,option{
+    background-color: black;
+    color: aliceblue;
+    width: 50%;
+    height: 20%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+button{
+    margin: 1%;
+}
+h3{
+    text-align: center;
+    background-color: black;
+}

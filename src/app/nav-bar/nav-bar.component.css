@@ -1,0 +1,48 @@
+nav{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   
+}
+
+img {
+    width: 15%;
+    height: 45px;
+    justify-content: start;
+}
+
+.nav-name {
+    color: rgb(139, 36, 235);
+    font-weight: 500;
+
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.nav-name {
+    position: relative;
+    margin-right: 15px;
+}
+
+.nav-name::before {
+    content: '';
+    position: absolute;
+    width: 85%;
+    height: 3px;
+    border-radius: 4px;
+    background-color: rgb(139, 36, 235);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.nav-name:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+Header{
+    width: fit-content;
+}
